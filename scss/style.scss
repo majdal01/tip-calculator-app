@@ -28,6 +28,7 @@ body {
     gap: $spacing-300;
     min-height: 30rem;
     max-width: 57.5rem;
+    box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.2007);
 }
 
 .input-icon-wrapper {
@@ -49,13 +50,14 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     padding: $spacing-100 $spacing-200;
+
      h1, h2, h3 {
         @include text-preset-5; 
         color: $grey-500;
         padding-bottom: $spacing-100;
     }     
+
     #bill-amount, #people-number {
         padding-left: 40px;
         padding-right: $spacing-200;
@@ -65,13 +67,17 @@ body {
         @include text-preset-3;
         color: $green-900;
         text-align: right;
-
-        input[type="number"]::placeholder {
-            text-align: right;
-            color: $green-900;
-        }
     }
-    
+
+    input[type="number"]::placeholder {
+        text-align: right;
+        color: rgba(0, 71, 75, 0.35);
+    }
+
+    #custom-tip::placeholder {
+        text-align: center;
+    }
+
 
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
@@ -79,9 +85,7 @@ body {
         margin: 0;
     }
 
-    input[type=number] {
-        -moz-appearance: textfield; /* Firefox */
-    }
+
 
     #tip-wrapper {
         display: flex;
@@ -104,9 +108,12 @@ body {
         height: 3rem;
         max-width: 116px;
     }
-    
 
+}
 
+input[type=number] {
+    appearance: textfield;
+    -moz-appearance: textfield; /* Firefox */
 }
 
 #output-section {
@@ -114,5 +121,42 @@ body {
     border-radius: 15px;
     color: $white;
     min-width: 25.8rem;
+    height: auto;
     padding: $spacing-300 $spacing-400;
+    display: flex;
+    flex-direction: column;
+
+    .output-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: $spacing-300;
+
+        h4 {
+            @include text-preset-5;
+            color: $white;
+        }
+
+        h5 {
+            @include text-preset-6;
+            color: $grey-400;
+        }
+
+        #tip-amount, #total-amount {
+            @include text-preset-1;
+            color: $green-400;
+        }
+    }
+
+    #reset-button {
+        background-color: $green-750;
+        color: $green-900;
+        width: 100%;
+        height: 2.875rem;
+        @include text-preset-4;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: auto;
+        border: none;
+    }
 }

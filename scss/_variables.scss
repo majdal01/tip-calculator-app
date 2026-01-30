@@ -89,11 +89,13 @@ $font-family: 'Space Mono', monospace;
     &:active {
       background-color: $green-400;
       color: $green-900;
+      border: none;
     }
 
     &:focus {
       background-color: $green-200;
       color: $green-900;
+      border: none;
     }
 }
 
