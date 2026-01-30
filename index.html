@@ -15,29 +15,71 @@
 </head>
 <body>
 
-  
+  <header>
+    <img src="./images/logo.svg" alt="logo">
+  </header>
 
   <main>
 
-  Bill
+    <div id="container">
 
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
+      <section id="input-section">
 
-  Number of People
+        <div>
+          <h1>Bill</h1>
+            <div class="input-icon-wrapper">
+              <img src="./images/icon-dollar.svg" alt="dollar icon" class="input-icon" />
+              <input type="number" id="bill-amount" placeholder="0" />
+            </div>
+        </div>
 
-  Tip Amount
-  / person
+        <div>
+          <h2>Select Tip %</h2>
+            <ul>
+              <li>
+                <button class="tip-btn">5%</button>
+              </li>
+              <li>
+                <button class="tip-btn">10%</button>
+              </li>
+              <li>
+                <button class="tip-btn">15%</button>
+              </li>
+              <li>
+                <button class="tip-btn">25%</button>
+              </li>
+              <li>
+                <button class="tip-btn">50%</button>
+              </li>
+              <li>
+                <input type="number" id="custom-tip" placeholder="Custom" />
+              </li>
+            </ul>
+        </div>
+        
+        <div>
+          <h3>Number of People</h3>
+          <div class="input-icon-wrapper">
+            <img src="./images/icon-person.svg" alt="person icon" class="input-icon" />
+            <input type="number" id="people-number" placeholder="0">
+          </div>
+        </div>
 
-  Total
-  / person
+      </section>
 
-  Reset
+      <section id="output-section">
+
+        <h4>Tip Amount</h4>
+        <h5>/ person</h5>
+
+        <h4>Total</h4>
+        <h5>/ person</h5>
+
+        <button  id="reset-button">Reset</button>
+
+      </section>
+
+    </div>
 
   </main>
   

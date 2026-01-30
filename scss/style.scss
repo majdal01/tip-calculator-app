@@ -1,1 +1,90 @@
 @use './variables' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+    padding-bottom: $spacing-1000;
+}
+
+body {
+    font-family: $font-family;
+    background-color: $grey-200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+#container {
+    background-color: $white;
+    border-radius: 25px;
+    padding: $spacing-400;
+    display: flex;
+    gap: $spacing-600;
+    min-height: 30rem;
+}
+
+.input-icon-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    
+    .input-icon {
+        position: absolute;
+        height: 1rem;
+        width: auto;
+        color: $grey-300;
+        padding-left: $spacing-200;
+        pointer-events: none;
+        }
+}
+
+#input-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    padding: $spacing-100 $spacing-200;
+     h1, h2, h3 {
+        @include text-preset-5; 
+        color: $grey-500;
+        padding-bottom: $spacing-100;
+    }     
+    #bill-amount, #people-number {
+        padding-left: 40px;
+        padding-right: $spacing-200;
+        background-color: $grey-50;
+        width: 100%;
+        border: none;
+        @include text-preset-3;
+        color: $green-900;
+        text-align: right;
+    }
+    input[type="number"]::placeholder {
+        text-align: right;
+        color: $green-900;
+    }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none; /* Chrome, Safari, Edge */
+        margin: 0;
+    }
+
+    input[type=number] {
+        -moz-appearance:textfield; /* Firefox */
+    }
+
+
+}
+
+#output-section {
+    background-color: $green-900;
+    border-radius: 15px;
+    color: $white;
+}
