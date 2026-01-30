@@ -18,6 +18,7 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+    margin: 0 1rem;
 }
 
 #container {
@@ -25,7 +26,7 @@ body {
     border-radius: 25px;
     padding: $spacing-400;
     display: flex;
-    gap: $spacing-300;
+    gap: $spacing-600;
     min-height: 30rem;
     max-width: 57.5rem;
     box-shadow: 0px 32px 43px rgba(79, 166, 175, 0.2007);
@@ -43,14 +44,15 @@ body {
         color: $grey-300;
         padding-left: $spacing-200;
         pointer-events: none;
-        }
+    }
 }
 
 #input-section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: $spacing-100 $spacing-200;
+    padding: $spacing-100 0;
+    width: 100%;
 
      h1, h2, h3 {
         @include text-preset-5; 
@@ -78,14 +80,11 @@ body {
         text-align: center;
     }
 
-
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
         -webkit-appearance: none; /* Chrome, Safari, Edge */
         margin: 0;
     }
-
-
 
     #tip-wrapper {
         display: flex;
@@ -99,7 +98,6 @@ body {
     }
 
     #custom-tip {
-        border: none;
         border-radius: 5px;
         background-color: $grey-50;
         @include text-preset-3;
@@ -120,7 +118,7 @@ input[type=number] {
     background-color: $green-900;
     border-radius: 15px;
     color: $white;
-    min-width: 25.8rem;
+    width: 100%;
     height: auto;
     padding: $spacing-300 $spacing-400;
     display: flex;
@@ -158,5 +156,45 @@ input[type=number] {
         cursor: pointer;
         margin-top: auto;
         border: none;
+    }
+}
+
+//Responsive styles
+
+@media (max-width: 785px) {
+
+    header {
+        padding: $spacing-400;
+    }
+
+    #container {
+        flex-direction: column;
+        max-width: 38rem;
+        height: auto;
+        padding: $spacing-600 $spacing-1000;
+
+        #input-section {
+            gap: $spacing-300;
+        }
+    }
+}
+
+@media (max-width: 400px) {
+
+    body {
+        margin: 0;
+    }
+
+    #container {
+        padding: $spacing-400 $spacing-300;
+    }
+
+    #output-section {
+        .output-line {
+            #tip-amount, #total-amount {
+                font-family: 'Space Mono', monospace;
+                font-size: 2rem;
+            }
+        }
     }
 }

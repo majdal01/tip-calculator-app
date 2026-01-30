@@ -83,6 +83,8 @@ $font-family: 'Space Mono', monospace;
     height: 3rem;
     min-width: 116px;
     border-radius: 0.313rem;
+    box-shadow: none;
+    border: none;
     cursor: pointer;
     @include text-preset-3;
 
