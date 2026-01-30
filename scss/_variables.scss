@@ -1,0 +1,103 @@
+/* Spacing */
+$spacing-1600: 8rem; //128px
+$spacing-1500: 7.5rem; //120px
+$spacing-1200: 6rem; //96px
+$spacing-1000: 5rem; //80px
+$spacing-600: 3rem; //48px
+$spacing-400: 2rem; //32px
+$spacing-300: 1.5rem; //24px
+$spacing-200: 1rem; //16px
+$spacing-100: 0.5rem; //8px
+$spacing-0: 0rem; //0px
+
+/* Colors */
+$white: hsl(0, 100%, 100%);
+$black: hsl(0, 0%, 0%);
+
+$grey-600: hsl(180, 25%, 32%);
+$grey-550: hsl(180, 18%, 40%);
+$grey-500: hsl(186, 14%, 43%);
+$grey-400: hsl(184, 14%, 56%);
+$grey-300: hsl(184, 19%, 68%);
+$grey-200: hsl(185, 41%, 84%);
+$grey-50: hsl(189, 47%, 97%);
+
+$green-900: hsl(183, 100%, 15%);
+$green-800: hsl(183, 85%, 21%);
+$green-750: hsl(183, 79%, 24%);
+$green-400: hsl(172, 67%, 45%);
+$green-200: hsl(173, 61%, 77%);
+
+$orange: hsl(13, 70%, 60%);
+
+/* Typography */
+$font-family: 'Space Mono', monospace;
+
+@mixin text-preset-1 {
+    font-family: $font-family;
+    font-size: 3rem; /* 48px */
+    line-height: 4.438rem; /* 71px */
+    letter-spacing: -1px;
+    color: $black;
+}
+
+@mixin text-preset-2 {
+    font-family: $font-family;
+    font-size: 2rem; /* 32px */
+    line-height: 2.938rem; /* 47px */
+    letter-spacing: -0.67px;
+    color: $black;
+}
+
+@mixin text-preset-3 {
+    font-family:  $font-family;
+    font-size: 1.5rem; /* 24px */
+    line-height: 2.25rem; /* 36px */
+    letter-spacing: 0rem;
+}
+
+@mixin text-preset-4 {
+    font-family:  $font-family;
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.875rem; /* 30px */
+    letter-spacing: 0rem;
+}
+
+@mixin text-preset-5 {
+    font-family: $font-family;
+    font-size: 1rem; /* 16px */
+    line-height: 1.5rem; /* 24px */
+    letter-spacing: 0;
+}
+
+@mixin text-preset-6 {
+    font-family: $font-family;
+    font-size: 0.813rem; /* 13px */
+    line-height: 1.188rem; /* 19px */
+    letter-spacing: 0;
+}
+
+@mixin tip-button {
+    background-color: $green-900;
+    color: $grey-50;
+    height: 3rem;
+    border-radius: 0.313rem;
+    cursor: pointer;
+    @include text-preset-3;
+
+    &:active {
+      background-color: $green-400;
+      color: $green-900;
+    }
+
+    &:focus {
+      background-color: $green-200;
+      color: $green-900;
+    }
+}
+
+@mixin tip-card {
+    background-color: $green-900;
+    padding: $spacing-300 $spacing-400;
+}
+
