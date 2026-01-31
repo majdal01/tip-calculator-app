@@ -67,7 +67,7 @@ body {
         width: 100%;
         border: none;
         @include text-preset-3;
-        color: $green-900;
+        color: $grey-500;
         text-align: right;
     }
 
@@ -78,6 +78,7 @@ body {
 
     #custom-tip::placeholder {
         text-align: center;
+        color: $grey-550;
     }
 
     input::-webkit-outer-spin-button,
@@ -101,12 +102,11 @@ body {
         border-radius: 5px;
         background-color: $grey-50;
         @include text-preset-3;
-        color: $grey-550;
         text-align: center;
         height: 3rem;
         max-width: 116px;
+        border: none;
     }
-
 }
 
 input[type=number] {
@@ -176,6 +176,13 @@ input[type=number] {
         #input-section {
             gap: $spacing-300;
         }
+    }
+}
+
+@media (max-width: 575px) {
+
+    #container {
+        padding: $spacing-400 $spacing-600;
     }
 }
 

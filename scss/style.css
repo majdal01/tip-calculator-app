@@ -72,7 +72,7 @@ body {
   font-size: 1.5rem; /* 24px */
   line-height: 2.25rem; /* 36px */
   letter-spacing: 0rem;
-  color: hsl(183, 100%, 15%);
+  color: hsl(186, 14%, 43%);
   text-align: right;
 }
 #input-section input[type=number]::-moz-placeholder {
@@ -85,9 +85,11 @@ body {
 }
 #input-section #custom-tip::-moz-placeholder {
   text-align: center;
+  color: hsl(180, 18%, 40%);
 }
 #input-section #custom-tip::placeholder {
   text-align: center;
+  color: hsl(180, 18%, 40%);
 }
 #input-section input::-webkit-outer-spin-button,
 #input-section input::-webkit-inner-spin-button {
@@ -131,10 +133,10 @@ body {
   font-size: 1.5rem; /* 24px */
   line-height: 2.25rem; /* 36px */
   letter-spacing: 0rem;
-  color: hsl(180, 18%, 40%);
   text-align: center;
   height: 3rem;
   max-width: 116px;
+  border: none;
 }
 
 input[type=number] {
@@ -208,6 +210,11 @@ input[type=number] {
   }
   #container #input-section {
     gap: 1.5rem;
+  }
+}
+@media (max-width: 575px) {
+  #container {
+    padding: 2rem 3rem;
   }
 }
 @media (max-width: 400px) {
