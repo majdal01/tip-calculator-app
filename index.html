@@ -58,7 +58,11 @@
         </article>
 
         <article>
-          <h3>Number of People</h3>
+          <div class="label-row">
+            <h3>Number of People</h3>
+            <span id="people-error" class="error hidden">Can’t be zero</span>
+          </div>
+
           <div class="input-icon-wrapper">
             <img src="./images/icon-person.svg" alt="person icon" class="input-icon" />
             <input type="number" id="people-number" placeholder="0">
@@ -87,7 +91,7 @@
           </div>
         </div>
 
-        <button  id="reset-button">Reset</button>
+        <button id="reset-button" disabled>Reset</button>
 
       </section>
 

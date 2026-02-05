@@ -87,18 +87,6 @@ $font-family: 'Space Mono', monospace;
     border: none;
     cursor: pointer;
     @include text-preset-3;
-
-    &:active {
-      background-color: $green-400;
-      color: $green-900;
-      border: none;
-    }
-
-    &:focus {
-      background-color: $green-200;
-      color: $green-900;
-      border: none;
-    }
 }
 
 @mixin tip-card {

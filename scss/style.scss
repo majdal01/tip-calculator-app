@@ -98,6 +98,14 @@ body {
         @include tip-button;
     }
 
+    .tip-btn.selected,
+    .tip-btn.selected:hover,
+    .tip-btn.selected:focus,
+    .tip-btn.selected:active {
+        background-color: $green-200;
+        color: $green-900;
+    }
+
     #custom-tip {
         border-radius: 5px;
         background-color: $grey-50;
@@ -107,11 +115,24 @@ body {
         max-width: 116px;
         border: none;
     }
+
+    .label-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
 
 input[type=number] {
     appearance: textfield;
     -moz-appearance: textfield; /* Firefox */
+}
+
+.error { 
+    color: red; 
+} 
+.hidden { 
+    display: none; 
 }
 
 #output-section {
@@ -147,7 +168,7 @@ input[type=number] {
     }
 
     #reset-button {
-        background-color: $green-750;
+        background-color: $green-200;
         color: $green-900;
         width: 100%;
         height: 2.875rem;
@@ -155,6 +176,12 @@ input[type=number] {
         border-radius: 5px;
         cursor: pointer;
         margin-top: auto;
+        border: none;
+    }
+       
+    #reset-button:disabled {
+        background-color: $green-800;
+        color: $green-750;
         border: none;
     }
 }
