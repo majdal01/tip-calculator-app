@@ -15,7 +15,10 @@ let selectedTip = null;
 // Tip button selection
 tipButtons.forEach(btn => {
   btn.addEventListener("click", () => {
-    tipButtons.forEach(b => b.classList.remove("selected"));
+    tipButtons.forEach(b => { 
+      b.classList.remove("selected"); 
+      b.classList.remove("ready"); 
+    });
     btn.classList.add("selected");
 
     selectedTip = parseFloat(btn.textContent) / 100;
@@ -29,7 +32,10 @@ tipButtons.forEach(btn => {
 customTipInput.addEventListener("input", () => {
   if (customTipInput.value === "") return;
 
-  tipButtons.forEach(b => b.classList.remove("selected"));
+  tipButtons.forEach(b => { 
+    b.classList.remove("selected");
+    b.classList.remove("ready");
+  });
   selectedTip = parseFloat(customTipInput.value) / 100;
 
   calculate();
@@ -38,6 +44,23 @@ customTipInput.addEventListener("input", () => {
 // Input listeners for bill and people
 billInput.addEventListener("input", calculate);
 peopleInput.addEventListener("input", calculate);
+
+billInput.addEventListener("keydown", function(e) {
+if (["e", "E", "+", "-"].includes(e.key)) {
+e.preventDefault();
+}
+});
+peopleInput.addEventListener("keydown", function(e) {
+if (["e", "E", "+", "-"].includes(e.key)) {
+e.preventDefault();
+}
+});
+customTipInput.addEventListener("keydown", function(e) {
+if (["e", "E", "+", "-"].includes(e.key)) {
+e.preventDefault();
+}
+});
+
 
 // Calculation function
 function calculate() {
@@ -61,6 +84,12 @@ function calculate() {
   if (billInput.value && peopleInput.value && selectedTip) {
     resetButton.classList.remove("active");
     resetButton.classList.add("ready");
+
+    const selectedBtn = document.querySelector('.tip-btn.selected');
+    if (selectedBtn) {
+      selectedBtn.classList.add('ready');
+      selectedBtn.classList.remove('selected');
+  }
   }
 
   const tipPerPerson = (bill * selectedTip) / people;

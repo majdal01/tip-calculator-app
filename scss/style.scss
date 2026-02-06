@@ -84,6 +84,10 @@ body {
         color: $grey-550;
     }
 
+    #custom-tip:focus {
+        outline: 2px solid $green-400;
+    }
+
     input::-webkit-outer-spin-button,
     input::-webkit-inner-spin-button {
         -webkit-appearance: none; /* Chrome, Safari, Edge */
@@ -108,6 +112,12 @@ body {
         background-color: $green-200;
         color: $green-900;
     }
+
+    .tip-btn.ready{
+        background-color: $green-400;
+        color: $green-900;
+    }
+
 
     #custom-tip {
         border-radius: 5px;
