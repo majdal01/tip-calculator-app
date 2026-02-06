@@ -70,6 +70,9 @@ body {
         color: $grey-500;
         text-align: right;
     }
+    #bill-amount:focus, #people-number:focus {
+        outline: 2px solid $green-400;
+    }
 
     input[type="number"]::placeholder {
         text-align: right;
@@ -171,8 +174,6 @@ input[type=number] {
     }
 
     #reset-button {
-        background-color: $green-200;
-        color: $green-900;
         width: 100%;
         height: 2.875rem;
         @include text-preset-4;
@@ -180,13 +181,24 @@ input[type=number] {
         cursor: pointer;
         margin-top: auto;
         border: none;
+        text-transform: uppercase;
     }
-       
     #reset-button:disabled {
-        background-color: $green-800;
-        color: $green-750;
-        border: none;
-    }
+            background-color: $green-800;
+            color: $green-750;
+            border: none;
+        }
+}
+
+
+#reset-button.active {
+    background-color: $green-200;
+    color: $green-900;
+}
+
+#reset-button.ready{
+    background-color: $green-400;
+    color: $green-900;
 }
 
 //Responsive styles

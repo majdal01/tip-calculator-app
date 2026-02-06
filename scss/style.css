@@ -75,6 +75,9 @@ body {
   color: hsl(186, 14%, 43%);
   text-align: right;
 }
+#input-section #bill-amount:focus, #input-section #people-number:focus {
+  outline: 2px solid hsl(172, 67%, 45%);
+}
 #input-section input[type=number]::-moz-placeholder {
   text-align: right;
   color: rgba(0, 71, 75, 0.35);
@@ -198,8 +201,6 @@ input[type=number] {
   color: hsl(172, 67%, 45%);
 }
 #output-section #reset-button {
-  background-color: hsl(173, 61%, 77%);
-  color: hsl(183, 100%, 15%);
   width: 100%;
   height: 2.875rem;
   font-family: "Space Mono", monospace;
@@ -210,11 +211,22 @@ input[type=number] {
   cursor: pointer;
   margin-top: auto;
   border: none;
+  text-transform: uppercase;
 }
 #output-section #reset-button:disabled {
   background-color: hsl(183, 85%, 21%);
   color: hsl(183, 79%, 24%);
   border: none;
+}
+
+#reset-button.active {
+  background-color: hsl(173, 61%, 77%);
+  color: hsl(183, 100%, 15%);
+}
+
+#reset-button.ready {
+  background-color: hsl(172, 67%, 45%);
+  color: hsl(183, 100%, 15%);
 }
 
 @media (max-width: 785px) {

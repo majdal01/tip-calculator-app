@@ -47,16 +47,20 @@ function calculate() {
   if (!people || people <= 0) {
     peopleError.classList.remove("hidden");
     redLine.classList.add("red-line");
-    resetButton.disabled = true;
-    return;
   } else {
     peopleError.classList.add("hidden");
     redLine.classList.remove("red-line");
   }
 
-  if (!bill || !selectedTip) {
-    resetButton.disabled = true;
-    return;
+  if (billInput.value || peopleInput.value || selectedTip) {
+    resetButton.disabled = false;
+    resetButton.classList.add("active");
+    resetButton.classList.remove("ready");
+  } 
+  
+  if (billInput.value && peopleInput.value && selectedTip) {
+    resetButton.classList.remove("active");
+    resetButton.classList.add("ready");
   }
 
   const tipPerPerson = (bill * selectedTip) / people;
