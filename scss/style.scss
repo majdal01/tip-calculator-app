@@ -134,6 +134,9 @@ input[type=number] {
 .hidden { 
     display: none; 
 }
+.red-line{
+    border: 2px solid red;
+}
 
 #output-section {
     background-color: $green-900;

@@ -8,6 +8,7 @@ const totalAmountDisplay = document.getElementById("total-amount");
 
 const resetButton = document.getElementById("reset-button");
 const peopleError = document.getElementById("people-error");
+const redLine = document.getElementById("redline");
 
 let selectedTip = null;
 
@@ -34,21 +35,23 @@ customTipInput.addEventListener("input", () => {
   calculate();
 });
 
-//Input listeners for bill and people
+// Input listeners for bill and people
 billInput.addEventListener("input", calculate);
 peopleInput.addEventListener("input", calculate);
 
-// ------------------ CALCULATION ------------------
+// Calculation function
 function calculate() {
   const bill = parseFloat(billInput.value);
   const people = parseInt(peopleInput.value);
 
   if (!people || people <= 0) {
     peopleError.classList.remove("hidden");
+    redLine.classList.add("red-line");
     resetButton.disabled = true;
     return;
   } else {
     peopleError.classList.add("hidden");
+    redLine.classList.remove("red-line");
   }
 
   if (!bill || !selectedTip) {
@@ -78,5 +81,6 @@ resetButton.addEventListener("click", () => {
   totalAmountDisplay.textContent = "$0.00";
 
   peopleError.classList.add("hidden");
+  redLine.classList.remove("red-line");
   resetButton.disabled = true;
 });
