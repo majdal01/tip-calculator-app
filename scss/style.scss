@@ -54,7 +54,7 @@ body {
     padding: $spacing-100 0;
     width: 100%;
 
-     h1, h2, h3 {
+     legend {
         @include text-preset-5; 
         color: $grey-500;
         padding-bottom: $spacing-100;

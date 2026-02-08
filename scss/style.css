@@ -54,7 +54,7 @@ body {
   padding: 0.5rem 0;
   width: 100%;
 }
-#input-section h1, #input-section h2, #input-section h3 {
+#input-section legend {
   font-family: "Space Mono", monospace;
   font-size: 1rem; /* 16px */
   line-height: 1.5rem; /* 24px */
