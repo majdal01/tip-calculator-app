@@ -45,6 +45,7 @@ customTipInput.addEventListener("input", () => {
 billInput.addEventListener("input", calculate);
 peopleInput.addEventListener("input", calculate);
 
+// Prevent invalid characters in inputs
 billInput.addEventListener("keydown", function(e) {
 if (["e", "E", "+", "-"].includes(e.key)) {
 e.preventDefault();
@@ -67,6 +68,7 @@ function calculate() {
   const bill = parseFloat(billInput.value);
   const people = parseInt(peopleInput.value);
 
+  // Validate people input
   if (!people || people <= 0) {
     peopleError.classList.remove("hidden");
     redLine.classList.add("red-line");
@@ -74,24 +76,30 @@ function calculate() {
     peopleError.classList.add("hidden");
     redLine.classList.remove("red-line");
   }
-
+  // Enable reset button if any input is present
   if (billInput.value || peopleInput.value || selectedTip) {
     resetButton.disabled = false;
     resetButton.classList.add("active");
     resetButton.classList.remove("ready");
   } 
-  
+  // Change reset button to ready state if all inputs are valid
   if (billInput.value && peopleInput.value && selectedTip) {
     resetButton.classList.remove("active");
     resetButton.classList.add("ready");
-
+    // Change selected tip button to ready state
     const selectedBtn = document.querySelector('.tip-btn.selected');
     if (selectedBtn) {
       selectedBtn.classList.add('ready');
       selectedBtn.classList.remove('selected');
   }
   }
-
+  // If any input is missing or invalid, reset displays
+  if (!bill || !people || !selectedTip) {
+    tipAmountDisplay.textContent = "$0.00";
+    totalAmountDisplay.textContent = "$0.00";
+    return;
+  }
+  // Perform calculations
   const tipPerPerson = (bill * selectedTip) / people;
   const totalPerPerson = bill / people + tipPerPerson;
 
@@ -107,7 +115,11 @@ resetButton.addEventListener("click", () => {
   peopleInput.value = "";
   customTipInput.value = "";
 
-  tipButtons.forEach(b => b.classList.remove("selected"));
+  tipButtons.forEach(b => {
+    b.classList.remove("selected");
+    b.classList.remove("ready");
+    b.classList.remove("active");
+  });
   selectedTip = null;
 
   tipAmountDisplay.textContent = "$0.00";
