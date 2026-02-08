@@ -201,14 +201,14 @@ input[type=number] {
   align-items: center;
   padding-bottom: 1.5rem;
 }
-#output-section .output-line h4 {
+#output-section .output-line p {
   font-family: "Space Mono", monospace;
   font-size: 1rem; /* 16px */
   line-height: 1.5rem; /* 24px */
   letter-spacing: 0;
   color: hsl(0, 100%, 100%);
 }
-#output-section .output-line h5 {
+#output-section .output-line .sub-label {
   font-family: "Space Mono", monospace;
   font-size: 0.813rem; /* 13px */
   line-height: 1.188rem; /* 19px */

@@ -182,12 +182,12 @@ input[type=number] {
         align-items: center;
         padding-bottom: $spacing-300;
 
-        h4 {
+        p {
             @include text-preset-5;
             color: $white;
         }
 
-        h5 {
+        .sub-label {
             @include text-preset-6;
             color: $grey-400;
         }
