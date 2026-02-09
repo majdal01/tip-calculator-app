@@ -87,6 +87,11 @@ $font-family: 'Space Mono', monospace;
     border: none;
     cursor: pointer;
     @include text-preset-3;
+
+    &:hover {
+        background-color: $green-200;
+        color: $green-900;
+    }
 }
 
 @mixin tip-card {
