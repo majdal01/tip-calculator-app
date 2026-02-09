@@ -12,6 +12,17 @@ const redLine = document.getElementById("redline");
 
 let selectedTip = null;
 
+billInput.addEventListener("input", () => {
+  if(billInput.max && parseFloat(billInput.value) > parseFloat(billInput.max)) {
+    billInput.value = billInput.max;
+  }
+});
+peopleInput.addEventListener("input", () => {
+  if(peopleInput.max && parseFloat(peopleInput.value) > parseFloat(peopleInput.max)) {
+    peopleInput.value = peopleInput.max;
+  }
+});
+
 // Tip button selection
 tipButtons.forEach(btn => {
   btn.addEventListener("click", () => {
